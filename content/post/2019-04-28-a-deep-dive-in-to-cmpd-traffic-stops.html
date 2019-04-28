@@ -10,6 +10,191 @@ tags: []
 
 
 
-<div id="test" class="section level2">
-<h2>Test</h2>
+<div id="analyzing-cmpd-traffic-stops" class="section level1">
+<h1>Analyzing CMPD Traffic Stops</h1>
+<p>In this post, we’ll examine a data set of stops by the Charlotte-Mecklenburg Police Department (CMPD).</p>
+<p>Our focus will be to understand what factors are related to whether someone is searched or not for a traffic stop.</p>
+<pre class="r"><code># Loading the libraries
+library(dplyr)
+library(tidyverse)
+library(scales)
+library(ggspatial)
+library(ggplot2)
+library(stringr)
+library(lubridate)
+library(sf)
+library(viridis)
+library(ggridges)
+library(gapminder)
+library(forcats)
+library(plotly)
+df &lt;- read_csv(&quot;Officer_Traffic_Stops.csv&quot;)</code></pre>
+<div id="demographics-of-drivers" class="section level2">
+<h2>Demographics of drivers</h2>
+<p>First, look at the data using the <code>glimpse()</code> function from <code>dplyr</code></p>
+<pre class="r"><code>glimpse(df) # Taking a glimpse at data</code></pre>
+<pre><code>## Observations: 68,488
+## Variables: 17
+## $ Month_of_Stop            &lt;chr&gt; &quot;2017/06&quot;, &quot;2017/06&quot;, &quot;2017/06&quot;, &quot;2017/…
+## $ Reason_for_Stop          &lt;chr&gt; &quot;Vehicle Regulatory&quot;, &quot;Vehicle Regulato…
+## $ Officer_Race             &lt;chr&gt; &quot;White&quot;, &quot;White&quot;, &quot;White&quot;, &quot;White&quot;, &quot;Wh…
+## $ Officer_Gender           &lt;chr&gt; &quot;Female&quot;, &quot;Male&quot;, &quot;Male&quot;, &quot;Male&quot;, &quot;Male…
+## $ Officer_Years_of_Service &lt;dbl&gt; 3, 2, 5, 10, 2, 3, 2, 5, 25, 10, 25, 12…
+## $ Driver_Race              &lt;chr&gt; &quot;Black&quot;, &quot;Black&quot;, &quot;Black&quot;, &quot;White&quot;, &quot;Bl…
+## $ Driver_Ethnicity         &lt;chr&gt; &quot;Non-Hispanic&quot;, &quot;Non-Hispanic&quot;, &quot;Non-Hi…
+## $ Driver_Gender            &lt;chr&gt; &quot;Male&quot;, &quot;Male&quot;, &quot;Male&quot;, &quot;Male&quot;, &quot;Female…
+## $ Driver_Age               &lt;dbl&gt; 23, 36, 45, 30, 37, 50, 50, 19, 41, 22,…
+## $ Was_a_Search_Conducted   &lt;chr&gt; &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;No…
+## $ Result_of_Stop           &lt;chr&gt; &quot;Verbal Warning&quot;, &quot;Verbal Warning&quot;, &quot;Ve…
+## $ CMPD_Division            &lt;chr&gt; &quot;North Tryon Division&quot;, &quot;Central Divisi…
+## $ ObjectID                 &lt;dbl&gt; 3001, 3002, 3003, 3004, 3005, 3006, 300…
+## $ CreationDate             &lt;dttm&gt; 2019-03-05 10:01:44, 2019-03-05 10:01:…
+## $ Creator                  &lt;chr&gt; &quot;CharlotteNC&quot;, &quot;CharlotteNC&quot;, &quot;Charlott…
+## $ EditDate                 &lt;dttm&gt; 2019-03-05 10:01:44, 2019-03-05 10:01:…
+## $ Editor                   &lt;chr&gt; &quot;CharlotteNC&quot;, &quot;CharlotteNC&quot;, &quot;Charlott…</code></pre>
+<p>Notice the different variable types: character (chr), num (numeric), and datetime (POSIXct).</p>
+<p>Let’s consider our target variable: <code>Was_a_Search_Conducted</code>.</p>
+</div>
+<div id="how-well-balanced-is-the-data-set-by-this-field" class="section level2">
+<h2>How well balanced is the data set by this field?</h2>
+<p>A bar chart that counts the number of records by <code>Was_a_Search_Conducted</code>.</p>
+<pre class="r"><code>plot.count &lt;- ggplot(data=df, aes(x=Was_a_Search_Conducted)) + # X and Y axeses
+  geom_bar(fill = &quot;lightblue&quot;) + # Fill Color
+  geom_text(aes(label=..count..),stat = &quot;count&quot;, # Label and it&#39;s position
+            position=position_stack(0.5)) 
+plot.count</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/bar-1.png" width="672" /></p>
+<p>The data is heavily imbalanced. We have 65440 cases where search was not conducted where as there are only 3048 cases in which a search was conducted.</p>
+<p>Next, let’s consider the age range of the driver.</p>
+</div>
+<div id="plotting-a-histogram-of-driver_age-and-identifying-the-appropriate-bin-size" class="section level2">
+<h2>Plotting a histogram of <code>Driver_Age</code> and identifying the appropriate bin size</h2>
+<pre class="r"><code>plot.hist &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
+  geom_histogram(bins = 40) # Bin size
+plot.hist</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-40-1.png" width="672" /></p>
+<pre class="r"><code>plot.hist &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
+  geom_histogram(bins = 50) # Bin size
+plot.hist</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-50-1.png" width="672" /></p>
+<pre class="r"><code>plot.hist &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
+  geom_histogram(bins = 60) # Bin size
+plot.hist</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-60-1.png" width="672" /></p>
+<p>Appropriate number of bins can be 50, this bin size gives a better understanding of the distribution of the driver’s age and number of stops.</p>
+<p>The number of stops of drivers decreases as the age of the driver increases. There is a clear rise in count of stops at the the age of 21-30 years. This doesn’t necessarily means that drivers from 21 to 30 are more prone for stops based on the plot because the splike can even be because that is the age where more number of drivers are present.</p>
+</div>
+<div id="a-density-plot-of-driver_age" class="section level2">
+<h2>A density plot of <code>Driver_Age</code></h2>
+<pre class="r"><code>plot.den &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
+  geom_density(fill = &quot;lightblue&quot;) + # Fill color
+  stat_density(adjust = 5, alpha = 0.5) # Adjust and transparency parameters
+plot.den</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/density-1.png" width="672" /></p>
+</div>
+<div id="a-box-plot-with-was_a_search_conducted-on-the-x-axis-and-driver_age-on-the-y-axis." class="section level2">
+<h2>A box plot with <code>Was_a_Search_Conducted</code> on the x-axis and <code>Driver_Age</code> on the y-axis.</h2>
+<pre class="r"><code>plot.box &lt;- ggplot(data=df, aes(x=Was_a_Search_Conducted, y=Driver_Age)) + geom_boxplot() # Box plot
+plot.box</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/boxplot-1.png" width="672" /></p>
+</div>
+<div id="a-violin-plot-with-was_a_search_conducted-on-the-x-axis-and-driver_age-on-the-y-axis." class="section level2">
+<h2>A violin plot with <code>Was_a_Search_Conducted</code> on the x-axis and <code>Driver_Age</code> on the y-axis.</h2>
+<pre class="r"><code>plot.violin &lt;- ggplot(data=df, aes(x=Was_a_Search_Conducted, y=Driver_Age)) + geom_violin() # Violin plot
+plot.violin</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/violin-1.png" width="672" /></p>
+<p>From the above plots, it is very evident that the searches are conducted more for the drivers under the age of 30, mostly around 25.</p>
+</div>
+<div id="lets-plot-the-number-of-stops-by-time." class="section level2">
+<h2>Let’s plot the number of stops by time.</h2>
+<p>Recalling part one, the <code>Month_of_Stop</code> variable is a character, not a date variable. The datatime’s are simply when the data was collected; not when the stop occurred. Therefore, we’ll need to convert the <code>Month_of_Stop</code> variable from a character to a Date format.</p>
+<p>Let’s first cleanup the date field using <code>tidyverse</code> packages like <code>stringr</code> and <code>lubridate</code>.</p>
+<pre class="r"><code># Had to do a workround to make the code working for &#39;-&#39; by splitting the statement to mutiple steps
+df &lt;- df %&gt;% mutate(Month_of_Stop = str_replace_all(Month_of_Stop,&quot;/&quot;,&quot;-&quot;)) # replace &quot;/&quot; with &quot;-&quot;
+df &lt;- df %&gt;% mutate(Month_of_Stop = paste0(df$Month_of_Stop,&quot;-01&quot;))  # add in day
+df &lt;- df %&gt;%  mutate(Date = ymd(df$Month_of_Stop)) # created a date field
+head(df)</code></pre>
+<pre><code>## # A tibble: 6 x 18
+##   Month_of_Stop Reason_for_Stop Officer_Race Officer_Gender
+##   &lt;chr&gt;         &lt;chr&gt;           &lt;chr&gt;        &lt;chr&gt;         
+## 1 2017-06-01    Vehicle Regula… White        Female        
+## 2 2017-06-01    Vehicle Regula… White        Male          
+## 3 2017-06-01    Stop Light/Sign White        Male          
+## 4 2017-06-01    Vehicle Equipm… White        Male          
+## 5 2017-06-01    Stop Light/Sign White        Male          
+## 6 2017-06-01    Stop Light/Sign White        Female        
+## # … with 14 more variables: Officer_Years_of_Service &lt;dbl&gt;,
+## #   Driver_Race &lt;chr&gt;, Driver_Ethnicity &lt;chr&gt;, Driver_Gender &lt;chr&gt;,
+## #   Driver_Age &lt;dbl&gt;, Was_a_Search_Conducted &lt;chr&gt;, Result_of_Stop &lt;chr&gt;,
+## #   CMPD_Division &lt;chr&gt;, ObjectID &lt;dbl&gt;, CreationDate &lt;dttm&gt;,
+## #   Creator &lt;chr&gt;, EditDate &lt;dttm&gt;, Editor &lt;chr&gt;, Date &lt;date&gt;</code></pre>
+</div>
+<div id="a-line-chart-with-the-number-of-traffic-stops-for-each-month" class="section level2">
+<h2>A line chart with the number of traffic stops for each month</h2>
+<pre class="r"><code>plot.line &lt;- df %&gt;% count(Date) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + #line plot
+  geom_smooth(method = &quot;auto&quot;) # trend line
+plot.line</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-1.png" width="672" /></p>
+<pre class="r"><code>plot.line &lt;- df %&gt;% count(Date) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + #line plot
+  geom_smooth(method = &quot;lm&quot;) # trend line
+plot.line</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-2.png" width="672" /></p>
+<p>Tried using different models to see whether there a defined pattern. Based on the trend line, there isn’t any stonng long term trend - number of traffic stops at charlotte is slightly going up. The data keeps fluctuating and gives more of a seasonality though it can’t be attributed to a specific time of the year.</p>
+</div>
+<div id="analyze-data-for-different-reason_for_stop" class="section level2">
+<h2>Analyze data for different <code>Reason_for_Stop</code></h2>
+<pre class="r"><code>plot.facet &lt;- df %&gt;% count(Date, Reason_for_Stop) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + # line plot
+  geom_smooth(method = &quot;lm&quot;) +  # trend line
+  facet_wrap(~Reason_for_Stop) # faceting 
+plot.facet</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-1.png" width="672" /></p>
+<pre class="r"><code>?scale_x_date</code></pre>
+</div>
+<div id="is-there-a-problem-with-the-plot" class="section level2">
+<h2>Is there a problem with the plot?</h2>
+<p>The plot is very difficult to interpret because of the common scale used across all the faceted plots. The data in each of these plots are at different ranges which is making the interpretation using a common scale difficult.</p>
+<p>To address this problem, we need to adjust the scale. Setting “free_y”/“free_x”/“free” this makes the y/x/both axis independent.</p>
+</div>
+<div id="plot-the-same-plot-but-with-a-free-y-axis-scale." class="section level2">
+<h2>Plot the same plot but with a free y-axis scale.</h2>
+<pre class="r"><code>plot.facet2 &lt;- df %&gt;% count(Date, Reason_for_Stop) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + # line plot
+  geom_smooth(method = &quot;lm&quot;) +  # trend line
+  facet_wrap(~Reason_for_Stop, scales = &quot;free_y&quot;) # faceting and free y axis
+plot.facet2</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free_y-1.png" width="672" /></p>
+<pre class="r"><code>plot.facet2 &lt;- df %&gt;% count(Date, Reason_for_Stop) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + # line plot
+  geom_smooth(method = &quot;lm&quot;) +  # trend line
+  facet_wrap(~Reason_for_Stop, scales = &quot;free_x&quot;) # faceting and free x axis
+plot.facet2</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free_x-1.png" width="672" /></p>
+<pre class="r"><code>plot.facet2 &lt;- df %&gt;% count(Date, Reason_for_Stop) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + # line plot
+  geom_smooth(method = &quot;lm&quot;) +  # trand line
+  facet_wrap(~Reason_for_Stop, scales = &quot;free&quot;) # faceting and free x and y axeses
+plot.facet2</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free-1.png" width="672" /></p>
+<p>Based on the plots, speeding seems to be the most volatile one. The number of stops keep swinging back and forth almost every month.</p>
+<p>Since the y-axis scale is not uniform, comparisons between the different ‘Reason for Stop’ is not straightforward. Though some of the plots shows heavy upward on downward trend, the change rate can’t be really compared against another category because of the different scale.</p>
+<p>Small multiples tends to be less effective when each of the variables are on different scales or magnitudes.</p>
+<p>Let’s consider instead CMPD traffic stops but by CMPD division. These are more even spread by division than the type of stop.</p>
+</div>
+<div id="analyze-stops-by-date-and-count" class="section level2">
+<h2>Analyze stops by <code>Date</code> and <code>Count</code></h2>
+<pre class="r"><code>plot.div &lt;- df %&gt;% count(Date, CMPD_Division) %&gt;% ggplot(aes(x = Date, y = n)) + # no: of stops by division
+  geom_line() + # line plot
+  geom_smooth(method = &quot;auto&quot;) +  # trend line
+  facet_wrap(~CMPD_Division) # faceting and free y axis
+plot.div</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-division-1.png" width="672" /></p>
+<pre class="r"><code>plot.div &lt;- df %&gt;% count(Date, CMPD_Division) %&gt;% ggplot(aes(x = Date, y = n)) + # no: of stops by division
+  geom_line() + # line plot
+  geom_smooth(method = &quot;lm&quot;) +  # trend line
+  facet_wrap(~CMPD_Division) # faceting and free y axis
+plot.div</code></pre>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-division-2.png" width="672" /></p>
+<p>The number stops in North Tryon Division seems to have a very sudden spike in the beggining of 2017. North Division also shows the same behaviour. But overall trend in North Tryon Division is upward where as North Division is slightly trending low.</p>
+<p>Number of stops in Metro Division and Freedom Division have been consistently low compared to other divisions</p>
+<p>Number of stops in Western Division and South Division is having a higher rate of reduction when it comes to long term trends.</p>
+</div>
 </div>
