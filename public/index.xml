@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Themes</title>
+    <title>Discovering the Goodness in the Data</title>
     <link>/</link>
-    <description>Recent content on Hugo Themes</description>
+    <description>Recent content on Discovering the Goodness in the Data</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Visualizing Data - An art rather than a science</title>
+      <link>/post/visualizing-data-an-art-rather-than-a-science/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/visualizing-data-an-art-rather-than-a-science/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>

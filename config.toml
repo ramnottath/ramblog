@@ -1,8 +1,7 @@
 baseurl = "https://example.com/"
-title = "Hugo Themes"
+title = "Discovering the Goodness in the Data"
 theme = "hugo-swift-theme"
-author = "Ram"
-copyright = "Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved."
+author = "Ramkumar Nottath"
 canonifyurls = true
 paginate = 4
 [params]
