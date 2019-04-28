@@ -9,7 +9,7 @@ tags: []
 ---
 
 
-# Analyzing Charlotte-Mecklenburg Police Department Traffic Stop
+# Analyzing Charlotte-Mecklenburg Police Department Traffic Stops
 
 In this post, we'll examine a data set of stops by the Charlotte-Mecklenburg Police Department (CMPD). 
 
