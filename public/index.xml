@@ -16,7 +16,7 @@
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/a-deep-dive-in-to-cmpd-traffic-stops/</guid>
-      <description>Analyzing Charlotte-Mecklenburg Police Department Traffic Stop In this post, we’ll examine a data set of stops by the Charlotte-Mecklenburg Police Department (CMPD).
+      <description>Analyzing Charlotte-Mecklenburg Police Department Traffic Stops In this post, we’ll examine a data set of stops by the Charlotte-Mecklenburg Police Department (CMPD).
 Our focus will be to understand what factors are related to whether someone is searched or not for a traffic stop.
 # Loading the libraries library(dplyr) library(tidyverse) library(scales) library(ggspatial) library(ggplot2) library(stringr) library(lubridate) library(sf) library(viridis) library(ggridges) library(gapminder) library(forcats) library(plotly) df &amp;lt;- read_csv(&amp;quot;Officer_Traffic_Stops.csv&amp;quot;) Demographics of drivers First, look at the data using the glimpse() function from dplyr</description>
     </item>
