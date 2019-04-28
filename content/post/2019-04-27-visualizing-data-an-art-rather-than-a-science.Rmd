@@ -1,0 +1,12 @@
+---
+title: Visualizing Data - An art rather than a science
+author: Ramkumar Nottath
+date: '2019-04-27'
+image: viz.png
+slug: visualizing-data-an-art-rather-than-a-science
+categories: []
+tags: []
+---
+
+## Contents will be added soon. Testing again with changes. Test git again
+
