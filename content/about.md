@@ -1,6 +1,6 @@
 ---
 date: "2014-04-09"
-image: read.jpg
+image: mypic.jpg
 title: About Ramkumar Nottath
 ---
 
