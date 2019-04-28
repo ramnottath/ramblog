@@ -3,6 +3,6 @@ title = "Discovering the Goodness in the Data"
 theme = "hugo-swift-theme"
 author = "Ramkumar Nottath"
 canonifyurls = true
-paginate = 4
+paginate = 2
 [params]
   staticman = false # turn this to true to enable staticman. See theme README
