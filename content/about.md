@@ -6,7 +6,7 @@ title: About Ramkumar Nottath
 
 ## About me
 
-A senior technology architect who started the career on Mainframes and expended his horizons to Traditional, NoSQL, NewSQL databases and BigData technologies and Data Science. Started career with Infosys in 2004 and have been working on several data migration / analytics initiatives across financial clients. 
+A senior technology architect who started the career on Mainframes and expended his horizons to Traditional, NoSQL, NewSQL databases and BigData technologies and Data Science. It might be just a coincidence that both my parents are teachers and I started my career with Infosys back in 2004 as an educator. For the last one and half decade I have been working on several data migration / analytics initiatives across financial clients. 
 
 I'm married to Saritha Ramkumar who works as Data Scientist in American Airlines. We have a 3 year old son Murali Krishna who keeps us busy all the time. 
 
