@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Psts on Discovering the Goodness in the Data</title>
+    <link>/pst/</link>
+    <description>Recent content in Psts on Discovering the Goodness in the Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/pst/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Deep Dive in to CMPD Traffic Stops</title>
+      <link>/pst/a-deep-dive-in-to-cmpd-traffic-stops/</link>
+      <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/pst/a-deep-dive-in-to-cmpd-traffic-stops/</guid>
+      <description> Test  </description>
+    </item>
+    
+    <item>
+      <title>Visualizing Data - An art rather than a science</title>
+      <link>/pst/visualizing-data-an-art-rather-than-a-science/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/pst/visualizing-data-an-art-rather-than-a-science/</guid>
+      <description> Contents will be added soon. Testing again with changes. Test git again  </description>
+    </item>
+    
+  </channel>
+</rss>
