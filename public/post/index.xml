@@ -30,5 +30,14 @@ Our focus will be to understand what factors are related to whether someone is s
       <description> Contents will be added soon.  </description>
     </item>
     
+    <item>
+      <title>Migration of Mainframe Batch Workloads to ETL Platforms</title>
+      <link>/post/migration-of-batch-workloads-to-etl-platforms/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/migration-of-batch-workloads-to-etl-platforms/</guid>
+      <description>During the late nineties, technology pundits predicted the imminent downfall of the mainframes. These ginormous computing machines from an earlier age seemed to have outlived their usefulness. Now, two decades later, the Big Iron continues to rule the roost running inside some of the world’s biggest companies including banks, retailers, insurance companies and airlines. 92 of the top 100 banks worldwide, 70% of the world’s largest retailers, 10 out of 10 of the world’s largest insurers and 23 of the world’s 25 largest airlines run on mainframes.</description>
+    </item>
+    
   </channel>
 </rss>
