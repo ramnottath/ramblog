@@ -1,0 +1,31 @@
+---
+title: MongoDB on its home stretch to become ACID compliant
+author: Ramkumar Nottath
+date: '2018-07-01'
+image: mongo.png
+slug: mongodb-on-its-home-stretch-to-become-acid-compliant
+categories: ['Data Integration']
+tags: []
+---
+{r }
+The product was on its home stretch to become ACID compliant when they announced the new features of MongoDB 4.0 at MongoDB World 18 summit. In other words, one of the most popular NoSQL database is making the life of developers, architects, application owners and other stakeholders a lot easier by bringing in multi document transactional capability. This will make MongoDB stand out among the NoSQL clan and bridges a major gap between noSQL and traditional databases.
+ 
+## Why it did not exist earlier? 
+
+ACID – Atomicity, Consistency, Isolation and Durability was something that was only offered by traditional relational databases though there were very few exceptions. The concept of NoSQL especially document databases was entirely different – the databases were architected in such a way that a transaction typically deals with one document which holds all the required information within that. When it all started, theoretically there was no pressing need to have transactional capability in a document model.
+ 
+## Then Why now?
+
+To start with, NoSQL databases were predominantly considered for nontraditional workloads and semi-structured / unstructured data. The assumption of not needing to access/maintain multiple documents in a single transaction for most of the use cases was holding good to a great extend at that point. However, as more and more traditional workloads started migrating to document databases, this turned out to be problem. All noSQL products including MongoDB started getting the heat of them not getting ‘picked’ as an option for primary storage for several use cases mainly because of the fact that they couldn’t maintain atomicity in transactions leading to data inconsistencies.
+ 
+## What changed? 
+
+With the new release, MongoDB has turned out to be one of the front runners in tackling that challenge by bringing in multi document transactional capability.  This means that if there are multiple documents getting updated in a single transaction, all the different updates that are part of that transaction will be considered a single unit of work. Currently the product supporst ‘all or nothing’ option which brings in ‘Atomicity’.
+ 
+## How does it work? 
+
+A ‘transaction’ can do CRUD (Create / Retrieve / Update / Delete) operations across different statements / documents / collections / databases that can be committed or rolled back as one single unit of work. All transactional writes will be on primary till commit is issued. After commit is issued, it will be replicated to secondary. Along with ‘transaction’ support, the product also brought in the concept of error labels for categorizing errors "TransientTransactionError", "UnknownTransactionCommitResult" during transactions. Currently nested transactions are not supported but product is thinking about a 'Safe Point' concept to provide the developer an option not to roll back everything when something goes wrong but go back to a stable point which is considered ‘Safe’ from a business standpoint. MongoDB ‘Transactions’ provides transactional support like relational databases such as Read your own writes that ensures ‘Consistency’. While ‘transactions’ definitely bringing some features that DB enthusiasts were looking for, it also comes with a risk of aborts due to locks being acquired.
+ 
+## Did anything change conceptually? 
+
+Though MongoDB supports 'transactions', it doesn’t change anything conceptually. The guideline or best practices around modeling stays intact. Moving data from relational to MongoDB as-is is still an anti-pattern though there is multi document transactional support. In any given application, modeling should be done in such a way that transactions are not the most common use cases.
