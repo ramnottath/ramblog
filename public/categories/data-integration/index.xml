@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Integration on Discovering the Goodness in Data</title>
+    <link>/categories/data-integration/</link>
+    <description>Recent content in Data Integration on Discovering the Goodness in Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/data-integration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MongoDB on its home stretch to become ACID compliant</title>
+      <link>/post/mongodb-on-its-home-stretch-to-become-acid-compliant/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mongodb-on-its-home-stretch-to-become-acid-compliant/</guid>
+      <description>{r } The product was on its home stretch to become ACID compliant when they announced the new features of MongoDB 4.0 at MongoDB World 18 summit. In other words, one of the most popular NoSQL database is making the life of developers, architects, application owners and other stakeholders a lot easier by bringing in multi document transactional capability. This will make MongoDB stand out among the NoSQL clan and bridges a major gap between noSQL and traditional databases.</description>
+    </item>
+    
+    <item>
+      <title>Migration of Mainframe Batch Workloads to ETL Platforms</title>
+      <link>/post/migration-of-batch-workloads-to-etl-platforms/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/migration-of-batch-workloads-to-etl-platforms/</guid>
+      <description>During the late nineties, technology pundits predicted the imminent downfall of the mainframes. These ginormous computing machines from an earlier age seemed to have outlived their usefulness. Now, two decades later, the Big Iron continues to rule the roost running inside some of the world’s biggest companies including banks, retailers, insurance companies and airlines. 92 of the top 100 banks worldwide, 70% of the world’s largest retailers, 10 out of 10 of the world’s largest insurers and 23 of the world’s 25 largest airlines run on mainframes.</description>
+    </item>
+    
+  </channel>
+</rss>
