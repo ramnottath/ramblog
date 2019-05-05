@@ -1,6 +1,8 @@
-- item: About Me
-  url: /about/
+- item: All
+  url: /
 - item: Data Analytics
   url: /categories/data-analytics/
 - item: Data Integration
   url: /categories/data-integration
+- item: About Me
+  url: /about/
