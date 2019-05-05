@@ -7,7 +7,6 @@ slug: mongodb-on-its-home-stretch-to-become-acid-compliant
 categories: ['Data Integration']
 tags: []
 ---
-{r }
 The product was on its home stretch to become ACID compliant when they announced the new features of MongoDB 4.0 at MongoDB World 18 summit. In other words, one of the most popular NoSQL database is making the life of developers, architects, application owners and other stakeholders a lot easier by bringing in multi document transactional capability. This will make MongoDB stand out among the NoSQL clan and bridges a major gap between noSQL and traditional databases.
  
 ## Why it did not exist earlier? 
