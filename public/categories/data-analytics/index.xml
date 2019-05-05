@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Analytics on Discovering the Goodness in the Data</title>
+    <title>Data Analytics on Discovering the Goodness in Data</title>
     <link>/categories/data-analytics/</link>
-    <description>Recent content in Data Analytics on Discovering the Goodness in the Data</description>
+    <description>Recent content in Data Analytics on Discovering the Goodness in Data</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 27 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-analytics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Deep Dive in to CMPD Traffic Stops</title>
+      <link>/post/a-deep-dive-in-to-cmpd-traffic-stops/</link>
+      <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-deep-dive-in-to-cmpd-traffic-stops/</guid>
+      <description>Analyzing Charlotte-Mecklenburg Police Department Traffic Stops In this post, we’ll examine a data set of stops by the Charlotte-Mecklenburg Police Department (CMPD).
+Our focus will be to understand what factors are related to whether someone is searched or not for a traffic stop.
+# Loading the libraries library(dplyr) library(tidyverse) library(scales) library(ggspatial) library(ggplot2) library(stringr) library(lubridate) library(sf) library(viridis) library(ggridges) library(gapminder) library(forcats) library(plotly) df &amp;lt;- read_csv(&amp;quot;Officer_Traffic_Stops.csv&amp;quot;) Demographics of drivers First, look at the data using the glimpse() function from dplyr</description>
+    </item>
     
     <item>
       <title>Visualizing Data - An art rather than a science</title>
@@ -16,7 +27,7 @@
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/visualizing-data-an-art-rather-than-a-science/</guid>
-      <description>Contents will be added soon. Testing again with changes</description>
+      <description> Contents will be added soon…  </description>
     </item>
     
   </channel>
