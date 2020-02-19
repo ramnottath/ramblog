@@ -16,7 +16,7 @@
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ramnottath.netlify.com/post/rstudio-on-aws-how-can-it-be-so-simple/</guid>
-      <description> Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment.
+      <description> Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment based on Amazon Machine Images (AMI).
  </description>
     </item>
     
