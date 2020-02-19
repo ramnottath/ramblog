@@ -14,7 +14,7 @@ In this post, we'll look at the steps involved in bringing up Rstudio in AWS env
 
 You won't believe, it is so simple. First, login to AWS Management Console. Click on EC2 Service. On the left pane, select AMIs. You can search for pre built images here. Search for 'rstudio'. You'll see something very similar to the below image.
 
-<Pic 1>
+![Select the required image](ami.png)
 
 Select the image and click launch. Don't his 'Review and Launch' button yet. Keep going with default option until you see 'Configure Security Group'. Add another rule for 'HTTP' with Source as 'Anywhere'. Review and Launch. 
 
