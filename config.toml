@@ -1,5 +1,5 @@
 baseurl = "https://ramnottath.netlify.com/"
-title = "Discovering the Goodness in Data"
+title = "Discovering The Goodness In Data"
 theme = "hugo-swift-theme"
 author = "Ramkumar Nottath"
 canonifyurls = true
