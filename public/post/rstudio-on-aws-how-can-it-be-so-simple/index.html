@@ -10,8 +10,8 @@
   <meta property = 'og:locale' content = 'en_US' />
   <meta property = 'og:type' content = 'article' />
   <meta property = 'og:title' content = 'Rstudio on AWS - How can it be so simple?' />
-  <meta property = 'og:description' content = ' Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment based on Amazon Machine Images (AMI).
- '>
+  <meta property = 'og:description' content = 'Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment based on Amazon Machine Images (AMI).
+You …'>
   <meta property = 'og:url' content = '/post/rstudio-on-aws-how-can-it-be-so-simple/' />
   <meta property = 'og:image' content = '/images/'/>
 
@@ -62,6 +62,14 @@
 <div id="rstudio-on-aws" class="section level1">
 <h1>Rstudio on AWS</h1>
 <p>In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment based on Amazon Machine Images (AMI).</p>
+<p>You won’t believe, it is so simple. First, login to AWS Management Console. Click on EC2 Service. On the left pane, select AMIs. You can search for pre built images here. Search for ‘rstudio’. You’ll see something very similar to the below image.</p>
+<p><Pic 1></p>
+<p>Select the image and click launch. Don’t his ‘Review and Launch’ button yet. Keep going with default option until you see ‘Configure Security Group’. Add another rule for ‘HTTP’ with Source as ‘Anywhere’. Review and Launch.</p>
+<p><Pic 2></p>
+<p>Once the instance is launched, go to the instance and get ‘Public Ip’ and ‘Instance ID’. You are all set to launch your Rstudio.</p>
+<p>Use the IP in a browser. Login with user name as ‘rstudio’ and password as value of ‘Instance Id’ to launch Rstudio. Here you go.!</p>
+<p><Pic 3></p>
+<p><Pic 4></p>
 </div>
 
   </article>
@@ -78,7 +86,7 @@
     <h3 class = 'post_link'>
       <a href='/post/rstudio-on-aws-how-can-it-be-so-simple/'>Rstudio on AWS - How can it be so simple?</a>
     </h3>
-    <p class = 'pale'> Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in …</p>
+    <p class = 'pale'>Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in …</p>
   </div>
 </li>
       
