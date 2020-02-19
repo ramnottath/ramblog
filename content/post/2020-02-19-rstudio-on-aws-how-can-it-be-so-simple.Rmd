@@ -29,6 +29,6 @@ Once the instance is launched, go to the instance and get 'Public Ip' and 'Insta
 Use the IP in a browser. Login with user name as 'rstudio' and password as value of 'Instance Id' to launch Rstudio. 
 
 ![Login using Public IP](login.png)
-Here you go.! You are all set.!
+Here you go..! You are all set..!
 
 ![RStudio is up and running](rstudio.png)
