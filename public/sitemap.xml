@@ -3,62 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/a-deep-dive-in-to-cmpd-traffic-stops/</loc>
-    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+    <loc>https://ramnottath.netlify.com/categories/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/data-analytics/</loc>
-    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+    <loc>https://ramnottath.netlify.com/categories/data-analytics/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+    <loc>https://ramnottath.netlify.com/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+    <loc>https://ramnottath.netlify.com/post/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/visualizing-data-an-art-rather-than-a-science/</loc>
+    <loc>https://ramnottath.netlify.com/post/rstudio-on-aws-how-can-it-be-so-simple/</loc>
+    <lastmod>2020-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/</loc>
+    <lastmod>2019-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ramnottath.netlify.com/post/visualizing-data-an-art-rather-than-a-science/</loc>
     <lastmod>2019-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/data-integration/</loc>
+    <loc>https://ramnottath.netlify.com/categories/data-integration/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/mongodb-on-its-home-stretch-to-become-acid-compliant/</loc>
+    <loc>https://ramnottath.netlify.com/post/mongodb-on-its-home-stretch-to-become-acid-compliant/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/migration-of-batch-workloads-to-etl-platforms/</loc>
+    <loc>https://ramnottath.netlify.com/post/migration-of-batch-workloads-to-etl-platforms/</loc>
     <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://ramnottath.netlify.com/about/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://ramnottath.netlify.com/tags/</loc>
     <priority>0</priority>
   </url>
   
