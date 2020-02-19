@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Discovering The Goodness In Data</title>
-    <link>https://ramnottath.netlify.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Discovering The Goodness In Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ramnottath.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Analytics</title>
-      <link>https://ramnottath.netlify.com/categories/data-analytics/</link>
+      <link>/categories/data-analytics/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ramnottath.netlify.com/categories/data-analytics/</guid>
+      <guid>/categories/data-analytics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Integration</title>
-      <link>https://ramnottath.netlify.com/categories/data-integration/</link>
+      <link>/categories/data-integration/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ramnottath.netlify.com/categories/data-integration/</guid>
+      <guid>/categories/data-integration/</guid>
       <description></description>
     </item>
     

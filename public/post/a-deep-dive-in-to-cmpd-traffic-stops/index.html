@@ -11,26 +11,26 @@
   <meta property = 'og:type' content = 'article' />
   <meta property = 'og:title' content = 'A Deep Dive in to CMPD Traffic Stops' />
   <meta property = 'og:description' content = 'Analyzing Charlotte-Mecklenburg Police Department Traffic Stops In this post, we’ll examine a data set of stops by the Charlotte-Mecklenburg Police …'>
-  <meta property = 'og:url' content = 'https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/' />
-  <meta property = 'og:image' content = 'https://ramnottath.netlify.com/images/tstop.jpg'/>
+  <meta property = 'og:url' content = '/post/a-deep-dive-in-to-cmpd-traffic-stops/' />
+  <meta property = 'og:image' content = '/images/tstop.jpg'/>
 
-  <link rel="apple-touch-icon" sizes="180x180" href = 'https://ramnottath.netlify.com/images/icons/apple-touch-icon.png'>
-  <link rel="icon" type="image/png" sizes="32x32" href = 'https://ramnottath.netlify.com/images/icons/favicon-32x32.png'>
-  <link rel="icon" type="image/png" sizes="16x16" href= 'https://ramnottath.netlify.com/images/icons/favicon-16x16.png'>
-  <link rel='canonical' href="https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/">
-  <link rel = 'stylesheet' href = 'https://ramnottath.netlify.com/main.css' integrity = ''>
+  <link rel="apple-touch-icon" sizes="180x180" href = '/images/icons/apple-touch-icon.png'>
+  <link rel="icon" type="image/png" sizes="32x32" href = '/images/icons/favicon-32x32.png'>
+  <link rel="icon" type="image/png" sizes="16x16" href= '/images/icons/favicon-16x16.png'>
+  <link rel='canonical' href="/post/a-deep-dive-in-to-cmpd-traffic-stops/">
+  <link rel = 'stylesheet' href = '/main.css' integrity = ''>
 </head>
   <body>
     <div class = 'nav-drop'>
   <div class = 'nav-body'>
   
-    <a href = 'https://ramnottath.netlify.com/'>All</a>
+    <a href = '/'>All</a>
   
-    <a href = 'https://ramnottath.netlify.com/categories/data-analytics/'>Data Analytics</a>
+    <a href = '/categories/data-analytics/'>Data Analytics</a>
   
-    <a href = 'https://ramnottath.netlify.com/categories/data-integration'>Data Integration</a>
+    <a href = '/categories/data-integration'>Data Integration</a>
   
-    <a href = 'https://ramnottath.netlify.com/about/'>About Me</a>
+    <a href = '/about/'>About Me</a>
   
     <div class = 'nav-close'></div>
   </div>
@@ -38,13 +38,13 @@
 
     <header class = 'nav' >
   <nav class = 'nav-menu'>
-    <a href='https://ramnottath.netlify.com/' class = 'nav-brand'>Discovering The Goodness In Data</a>
+    <a href='/' class = 'nav-brand'>Discovering The Goodness In Data</a>
     <div class = 'nav-bar'>&#9776;</div>
   </nav>
 </header>
     <main>
       
-<section class = 'post_header' style = 'background-image:url(https://ramnottath.netlify.com/images/tstop.jpg);'>
+<section class = 'post_header' style = 'background-image:url(/images/tstop.jpg);'>
   <h1 class='post_title' itemprop='name headline'>A Deep Dive in to CMPD Traffic Stops</h1>
   
   
@@ -111,7 +111,7 @@ df &lt;- read_csv(&quot;Officer_Traffic_Stops.csv&quot;)</code></pre>
   geom_text(aes(label=..count..),stat = &quot;count&quot;, # Label and it&#39;s position
             position=position_stack(0.5)) 
 plot.count</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/bar-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/bar-1.png" width="672" /></p>
 <p>The data is heavily imbalanced. We have 65440 cases where search was not conducted where as there are only 3048 cases in which a search was conducted.</p>
 <p>Next, let’s consider the age range of the driver.</p>
 </div>
@@ -120,15 +120,15 @@ plot.count</code></pre>
 <pre class="r"><code>plot.hist &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
   geom_histogram(bins = 40) # Bin size
 plot.hist</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-40-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-40-1.png" width="672" /></p>
 <pre class="r"><code>plot.hist &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
   geom_histogram(bins = 50) # Bin size
 plot.hist</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-50-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-50-1.png" width="672" /></p>
 <pre class="r"><code>plot.hist &lt;- ggplot(data=df, aes(x=Driver_Age)) + # X and Y axeses
   geom_histogram(bins = 60) # Bin size
 plot.hist</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-60-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/histogram-bins-60-1.png" width="672" /></p>
 <p>Appropriate number of bins can be 50, this bin size gives a better understanding of the distribution of the driver’s age and number of stops.</p>
 <p>The number of stops of drivers decreases as the age of the driver increases. There is a clear rise in count of stops at the the age of 21-30 years. This doesn’t necessarily means that drivers from 21 to 30 are more prone for stops based on the plot because the splike can even be because that is the age where more number of drivers are present.</p>
 </div>
@@ -138,19 +138,19 @@ plot.hist</code></pre>
   geom_density(fill = &quot;lightblue&quot;) + # Fill color
   stat_density(adjust = 5, alpha = 0.5) # Adjust and transparency parameters
 plot.den</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/density-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/density-1.png" width="672" /></p>
 </div>
 <div id="a-box-plot-with-was_a_search_conducted-on-the-x-axis-and-driver_age-on-the-y-axis." class="section level2">
 <h2>A box plot with <code>Was_a_Search_Conducted</code> on the x-axis and <code>Driver_Age</code> on the y-axis.</h2>
 <pre class="r"><code>plot.box &lt;- ggplot(data=df, aes(x=Was_a_Search_Conducted, y=Driver_Age)) + geom_boxplot() # Box plot
 plot.box</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/boxplot-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/boxplot-1.png" width="672" /></p>
 </div>
 <div id="a-violin-plot-with-was_a_search_conducted-on-the-x-axis-and-driver_age-on-the-y-axis." class="section level2">
 <h2>A violin plot with <code>Was_a_Search_Conducted</code> on the x-axis and <code>Driver_Age</code> on the y-axis.</h2>
 <pre class="r"><code>plot.violin &lt;- ggplot(data=df, aes(x=Was_a_Search_Conducted, y=Driver_Age)) + geom_violin() # Violin plot
 plot.violin</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/violin-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/violin-1.png" width="672" /></p>
 <p>From the above plots, it is very evident that the searches are conducted more for the drivers under the age of 30, mostly around 25.</p>
 </div>
 <div id="lets-plot-the-number-of-stops-by-time." class="section level2">
@@ -183,11 +183,11 @@ head(df)</code></pre>
   geom_smooth(method = &quot;auto&quot;) # trend line
 plot.line</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-1.png" width="672" /></p>
 <pre class="r"><code>plot.line &lt;- df %&gt;% count(Date) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + #line plot
   geom_smooth(method = &quot;lm&quot;) # trend line
 plot.line</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-2.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-2.png" width="672" /></p>
 <p>Tried using different models to see whether there a defined pattern. Based on the trend line, there isn’t any stonng long term trend - number of traffic stops at charlotte is slightly going up. The data keeps fluctuating and gives more of a seasonality though it can’t be attributed to a specific time of the year.</p>
 </div>
 <div id="analyze-data-for-different-reason_for_stop" class="section level2">
@@ -196,7 +196,7 @@ plot.line</code></pre>
   geom_smooth(method = &quot;lm&quot;) +  # trend line
   facet_wrap(~Reason_for_Stop) # faceting 
 plot.facet</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-1.png" width="672" /></p>
 <pre class="r"><code>?scale_x_date</code></pre>
 </div>
 <div id="is-there-a-problem-with-the-plot" class="section level2">
@@ -210,17 +210,17 @@ plot.facet</code></pre>
   geom_smooth(method = &quot;lm&quot;) +  # trend line
   facet_wrap(~Reason_for_Stop, scales = &quot;free_y&quot;) # faceting and free y axis
 plot.facet2</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free_y-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free_y-1.png" width="672" /></p>
 <pre class="r"><code>plot.facet2 &lt;- df %&gt;% count(Date, Reason_for_Stop) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + # line plot
   geom_smooth(method = &quot;lm&quot;) +  # trend line
   facet_wrap(~Reason_for_Stop, scales = &quot;free_x&quot;) # faceting and free x axis
 plot.facet2</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free_x-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free_x-1.png" width="672" /></p>
 <pre class="r"><code>plot.facet2 &lt;- df %&gt;% count(Date, Reason_for_Stop) %&gt;% ggplot(aes(x = Date, y = n)) + geom_line() + # line plot
   geom_smooth(method = &quot;lm&quot;) +  # trand line
   facet_wrap(~Reason_for_Stop, scales = &quot;free&quot;) # faceting and free x and y axeses
 plot.facet2</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-reason-2-free-1.png" width="672" /></p>
 <p>Based on the plots, speeding seems to be the most volatile one. The number of stops keep swinging back and forth almost every month.</p>
 <p>Since the y-axis scale is not uniform, comparisons between the different ‘Reason for Stop’ is not straightforward. Though some of the plots shows heavy upward on downward trend, the change rate can’t be really compared against another category because of the different scale.</p>
 <p>Small multiples tends to be less effective when each of the variables are on different scales or magnitudes.</p>
@@ -234,13 +234,13 @@ plot.facet2</code></pre>
   facet_wrap(~CMPD_Division) # faceting and free y axis
 plot.div</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-division-1.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-division-1.png" width="672" /></p>
 <pre class="r"><code>plot.div &lt;- df %&gt;% count(Date, CMPD_Division) %&gt;% ggplot(aes(x = Date, y = n)) + # no: of stops by division
   geom_line() + # line plot
   geom_smooth(method = &quot;lm&quot;) +  # trend line
   facet_wrap(~CMPD_Division) # faceting and free y axis
 plot.div</code></pre>
-<p><img src="https://ramnottath.netlify.com/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-division-2.png" width="672" /></p>
+<p><img src="/post/2019-04-28-a-deep-dive-in-to-cmpd-traffic-stops_files/figure-html/stops-by-division-2.png" width="672" /></p>
 <p>The number stops in North Tryon Division seems to have a very sudden spike in the beggining of 2017. North Division also shows the same behaviour. But overall trend in North Tryon Division is upward where as North Division is slightly trending low.</p>
 <p>Number of stops in Metro Division and Freedom Division have been consistently low compared to other divisions</p>
 <p>Number of stops in Western Division and South Division is having a higher rate of reduction when it comes to long term trends.</p>
@@ -254,24 +254,24 @@ plot.div</code></pre>
     <ul class='flex post_aside'>
       
        <li class = 'duo post_item'>
-  <a class = 'show' href='https://ramnottath.netlify.com/post/rstudio-on-aws-how-can-it-be-so-simple/' title = 'Rstudio on AWS - How can it be so simple?' style = 'background-image: url(https://ramnottath.netlify.com/images/);'>
+  <a class = 'show' href='/post/rstudio-on-aws-how-can-it-be-so-simple/' title = 'Rstudio on AWS - How can it be so simple?' style = 'background-image: url(/images/);'>
   </a>
   <div class = 'excerpt'>
     
     <h3 class = 'post_link'>
-      <a href='https://ramnottath.netlify.com/post/rstudio-on-aws-how-can-it-be-so-simple/'>Rstudio on AWS - How can it be so simple?</a>
+      <a href='/post/rstudio-on-aws-how-can-it-be-so-simple/'>Rstudio on AWS - How can it be so simple?</a>
     </h3>
     <p class = 'pale'> Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in …</p>
   </div>
 </li>
       
        <li class = 'duo post_item'>
-  <a class = 'show' href='https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/' title = 'A Deep Dive in to CMPD Traffic Stops' style = 'background-image: url(https://ramnottath.netlify.com/images/tstop.jpg);'>
+  <a class = 'show' href='/post/a-deep-dive-in-to-cmpd-traffic-stops/' title = 'A Deep Dive in to CMPD Traffic Stops' style = 'background-image: url(/images/tstop.jpg);'>
   </a>
   <div class = 'excerpt'>
     
     <h3 class = 'post_link'>
-      <a href='https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/'>A Deep Dive in to CMPD Traffic Stops</a>
+      <a href='/post/a-deep-dive-in-to-cmpd-traffic-stops/'>A Deep Dive in to CMPD Traffic Stops</a>
     </h3>
     <p class = 'pale'>Analyzing Charlotte-Mecklenburg Police Department Traffic Stops In this post, we’ll …</p>
   </div>
@@ -280,8 +280,8 @@ plot.div</code></pre>
     </ul>
   </aside>
 </div>
-<script src = 'https://ramnottath.netlify.com/js/autosize.min.js'></script>
-<script src = 'https://ramnottath.netlify.com/js/timeago.js'></script>
+<script src = '/js/autosize.min.js'></script>
+<script src = '/js/timeago.js'></script>
 
     </main>
     <footer class = 'footer'>
@@ -291,6 +291,6 @@ plot.div</code></pre>
   </div>
 </footer>
 <script src = 'https://code.jquery.com/jquery-3.1.0.min.js'   integrity='sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s='   crossorigin='anonymous'></script>
-<script src = 'https://ramnottath.netlify.com/js/index.js'></script>
+<script src = '/js/index.js'></script>
   </body>
 </html>

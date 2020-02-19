@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Analytics on Discovering The Goodness In Data</title>
-    <link>https://ramnottath.netlify.com/categories/data-analytics/</link>
+    <link>/categories/data-analytics/</link>
     <description>Recent content in Data Analytics on Discovering The Goodness In Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 19 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ramnottath.netlify.com/categories/data-analytics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/data-analytics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rstudio on AWS - How can it be so simple?</title>
-      <link>https://ramnottath.netlify.com/post/rstudio-on-aws-how-can-it-be-so-simple/</link>
+      <link>/post/rstudio-on-aws-how-can-it-be-so-simple/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ramnottath.netlify.com/post/rstudio-on-aws-how-can-it-be-so-simple/</guid>
-      <description> Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment based on Amazon Machine Images (AMI).
+      <guid>/post/rstudio-on-aws-how-can-it-be-so-simple/</guid>
+      <description> Rstudio on AWS In this post, we’ll look at the steps involved in bringing up Rstudio in AWS environment based on Amazon Machine Images.
  </description>
     </item>
     
     <item>
       <title>A Deep Dive in to CMPD Traffic Stops</title>
-      <link>https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/</link>
+      <link>/post/a-deep-dive-in-to-cmpd-traffic-stops/</link>
       <pubDate>Sun, 28 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ramnottath.netlify.com/post/a-deep-dive-in-to-cmpd-traffic-stops/</guid>
+      <guid>/post/a-deep-dive-in-to-cmpd-traffic-stops/</guid>
       <description>Analyzing Charlotte-Mecklenburg Police Department Traffic Stops In this post, we’ll examine a data set of stops by the Charlotte-Mecklenburg Police Department (CMPD).
 Our focus will be to understand what factors are related to whether someone is searched or not for a traffic stop.
 # Loading the libraries library(dplyr) library(tidyverse) library(scales) library(ggspatial) library(ggplot2) library(stringr) library(lubridate) library(sf) library(viridis) library(ggridges) library(gapminder) library(forcats) library(plotly) df &amp;lt;- read_csv(&amp;quot;Officer_Traffic_Stops.csv&amp;quot;) Demographics of drivers First, look at the data using the glimpse() function from dplyr</description>
@@ -33,10 +33,10 @@ Our focus will be to understand what factors are related to whether someone is s
     
     <item>
       <title>Visualizing Data - An art rather than a science</title>
-      <link>https://ramnottath.netlify.com/post/visualizing-data-an-art-rather-than-a-science/</link>
+      <link>/post/visualizing-data-an-art-rather-than-a-science/</link>
       <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ramnottath.netlify.com/post/visualizing-data-an-art-rather-than-a-science/</guid>
+      <guid>/post/visualizing-data-an-art-rather-than-a-science/</guid>
       <description> Contents will be added soon…  </description>
     </item>
     
