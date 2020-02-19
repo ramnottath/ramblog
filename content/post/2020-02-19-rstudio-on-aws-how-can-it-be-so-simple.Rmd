@@ -16,13 +16,19 @@ You won't believe, it is so simple. First, login to AWS Management Console. Clic
 
 ![Select the required image from the list](ami.png)
 
+After selecting the AMI, you may want to select the instance type as t2.micro since it is 'Free Tier Eligible'. 
+
+![Select the instance type](t2micro.png)
+
 Select the image and click launch. Don't his 'Review and Launch' button yet. Keep going with default option until you see 'Configure Security Group'. Add another rule for 'HTTP' with Source as 'Anywhere'. Review and Launch. 
 
-<Pic 2>
+![Select the Configure Security Group setting](csg.png)
 
 Once the instance is launched, go to the instance and get 'Public Ip' and 'Instance ID'. You are all set to launch your Rstudio. 
 
-Use the IP in a browser. Login with user name as 'rstudio' and password as value of 'Instance Id' to launch Rstudio. Here you go.!
+Use the IP in a browser. Login with user name as 'rstudio' and password as value of 'Instance Id' to launch Rstudio. 
 
-<Pic 3>
-<Pic 4>
+![Login using Public IP](login.png)
+Here you go.! You are all set.!
+
+![RStudio is up and running](rstudio.png)
