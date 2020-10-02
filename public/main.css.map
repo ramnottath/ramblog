@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Volumes/GoogleDrive/My Drive/Visual Analytics/ramblog",
+	"sourceRoot": "/Volumes/GoogleDrive/My Drive/Visual Analytics/blogsite/ramblog",
 	"sources": [
 		"themes/hugo-swift-theme/assets/main.scss",
 		"themes/hugo-swift-theme/assets/_fonts.scss",
