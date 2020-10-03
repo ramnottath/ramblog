@@ -1,5 +1,5 @@
 ---
-title: Why kafka adoption is skyrocketing?
+title: Why is kafka adoption skyrocketing?
 author: Ramkumar Nottah
 date: '2020-10-02'
 image: MQKafka.JPEG
