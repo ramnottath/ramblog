@@ -12,7 +12,7 @@
   <meta property = 'og:title' content = 'Why kafka adoption is skyrocketing?' />
   <meta property = 'og:description' content = 'Kafka adoption - A quick look Data stream processing has become one of the most vitalpieces in the data world. The need for organizations to get …'>
   <meta property = 'og:url' content = '/post/why-kafka-adoption-is-skyrocketing/' />
-  <meta property = 'og:image' content = '/images/'/>
+  <meta property = 'og:image' content = '/images/MQKafka.JPEG'/>
 
   <link rel="apple-touch-icon" sizes="180x180" href = '/images/icons/apple-touch-icon.png'>
   <link rel="icon" type="image/png" sizes="32x32" href = '/images/icons/favicon-32x32.png'>
@@ -44,7 +44,7 @@
 </header>
     <main>
       
-<section class = 'post_header' style = 'background-image:url(/images/);'>
+<section class = 'post_header' style = 'background-image:url(/images/MQKafka.JPEG);'>
   <h1 class='post_title' itemprop='name headline'>Why kafka adoption is skyrocketing?</h1>
   
   
@@ -61,6 +61,34 @@
 <div id="kafka-adoption---a-quick-look" class="section level1">
 <h1>Kafka adoption - A quick look</h1>
 <p>Data stream processing has become one of the most vitalpieces in the data world. The need for organizations to get access to the data inreal-time / near real-time is increasing drastically. Let it be a twitter or facebookfeed, click stream data, payment tracking information, customer servicerequests – the list goes on and every organization wants to have that data asquickly as possible and act on it to better service the customer. In the recentpast, we have seen a lot of adoption of Kafka when it comes to data streaminguse cases and we have seen that the adoption is increasingly getting on to thespaces where MQs used to dominate. Based on the different use cases that I haveseen in my experience here are some of the key factors why and when a lot of applicationsprefer Kafka over MQ –</p>
+<div id="producer-consumer-decoupling" class="section level3">
+<h3>Producer / Consumer decoupling</h3>
+<p>Kafka provides the flexibility of multiple consumers (which can have independent processing logic) consume data from same kafka topic where as in MQ messages are typically consumed by a consumer(s) having a specific functionality. Kafka internally stores the offset of each consumer so that producers and consumers are completely decoupled and can work at their own pace. Kafka is a typical pub-sub model whereas MQ is more tailored for point to point message transmission.</p>
+</div>
+<div id="durability" class="section level3">
+<h3>Durability</h3>
+<p>Kafka provides durability since it stores the data based on the retention period and provides an option to go back and consume the same data if in case the consuming system realizes that there was a flaw in the processing logic and they have to replay the whole set of messages.</p>
+</div>
+<div id="performance-and-throughput" class="section level3">
+<h3>Performance and throughput</h3>
+<p>Performance and throughput of kafka is typically higher than MQ. A part of it is because of the partitioning concept in Kafka that allows parallel processing and the distributed architecture of kafka helps in scaling the cluster horizontally. You can tune your applications throughput based on the ‘acknowledgements’ parameters at producer level as well.</p>
+</div>
+<div id="much-more-than-traditional-messaging" class="section level3">
+<h3>Much more than traditional messaging</h3>
+<p>Kafka is not just a traditional messaging platform but can cater to different streaming and stream processing needs such as messaging, storage and processing where as a larger portion of MQ use cases are towards traditional messaging capabilities</p>
+</div>
+<div id="kafka-streams-and-ksql-for-real-time-analytics" class="section level3">
+<h3>Kafka streams and KSQL for real-time analytics</h3>
+<p>Kafka streams allows processing of data that is coming into the topic for any of the business validations and transformations. It also allows joining multiple streams and K-Tables to get insights on the real-time data. KSQL has the capability to join different topics / streams in real-time and produce the output. These features enable applications to do real-time analytics on data streams.</p>
+</div>
+<div id="data-replication-and-ha" class="section level3">
+<h3>Data Replication and HA</h3>
+<p>The ability to have replication factor defined and a cluster or topic level and capability to have multiple data centers using inbuilt replication provides better high availability and fault tolerance compared to MQ Messaging semantics – Different messaging semantics such as At-least-once, At-most-once, Exactly-once helps in tuning the performance of the application based on business needs and also helps in designing the application based on the business requirements at hand.</p>
+</div>
+<div id="easy-integrations" class="section level3">
+<h3>Easy integrations</h3>
+<p>Easy integrations with different technology stacks by virtue of 100+ ‘connectors’ provided by Kafka (Confluent) or from other software vendors such as Pega, Mulesoft, IBM IIDR, Splunk etc. The distributed architecture of kafka makes the integration easier with other niche technologies which reply on distributed architecture.</p>
+</div>
 </div>
 
   </article>
@@ -70,7 +98,7 @@
     <ul class='flex post_aside'>
       
        <li class = 'duo post_item'>
-  <a class = 'show' href='/post/why-kafka-adoption-is-skyrocketing/' title = 'Why kafka adoption is skyrocketing?' style = 'background-image: url(/images/);'>
+  <a class = 'show' href='/post/why-kafka-adoption-is-skyrocketing/' title = 'Why kafka adoption is skyrocketing?' style = 'background-image: url(/images/MQKafka.JPEG);'>
   </a>
   <div class = 'excerpt'>
     
