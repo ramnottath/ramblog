@@ -12,7 +12,7 @@ tags: []
 
 # Kafka adoption - A quick look
 
-Data stream processing has become one of the most vitalpieces in the data world. The need for organizations to get access to the data inreal-time / near real-time is increasing drastically. Let it be a twitter or facebookfeed, click stream data, payment tracking information, customer servicerequests – the list goes on and every organization wants to have that data asquickly as possible and act on it to better service the customer. In the recentpast, we have seen a lot of adoption of Kafka when it comes to data streaminguse cases and we have seen that the adoption is increasingly getting on to thespaces where MQs used to dominate. Based on the different use cases that I haveseen in my experience here are some of the key factors why and when a lot of applicationsprefer Kafka over MQ –
+Data stream processing has become one of the most vital pieces in the data world. The need for organizations to get access to the data in real-time / near real-time is increasing drastically. A twitter or facebook feed, click stream data, payment tracking information, customer service requests – the list goes on and every organization wants to have that data as quickly as possible and act on it to better serve the customer. In the recent past, we have seen a lot of adoption of Kafka when it comes to data streaming use cases and we have seen that the adoption is increasingly getting on to the spaces where MQs used to dominate. Based on the different use cases that I have seen in my experience here are some of the key factors why and when most of the applications prefer Kafka over MQ –
 
 ### Producer / Consumer decoupling
 
@@ -30,17 +30,20 @@ Performance and throughput of kafka is typically higher than MQ. A part of it is
 
 ### Much more than traditional messaging
 
-Kafka is not just a traditional messaging platform but can cater to different streaming and stream processing needs such as messaging, storage and processing where as a larger portion of MQ use cases are towards traditional messaging capabilities
+Kafka is not just a traditional messaging platform but can cater to different streaming and stream processing needs such as messaging, storage and processing where as a larger portion of MQ use cases are towards traditional messaging capabilities.
 
 ### Kafka streams and KSQL for real-time analytics
 
-Kafka streams allows processing of data that is coming into the topic for any of the business validations and transformations. It also allows joining multiple streams and K-Tables to get insights on the real-time data. KSQL has the capability to join different topics / streams in real-time and produce the output. These features enable applications to do real-time analytics on data streams.
+Kafka streams allows processing of data that is coming into the topic to apply any of the business validations and transformations. It also allows to join multiple streams and K-Tables to get insights on the real-time data. KSQL has the capability to join different streams and tables in real-time and produce the output using a SQL like construct . These features enable applications to do real-time analytics on data streams.
 
 ### Data Replication and HA
 
-The ability to have replication factor defined and a cluster or topic level and capability to have multiple data centers using inbuilt replication provides better high availability and fault tolerance compared to MQ
-Messaging semantics – Different messaging semantics such as At-least-once, At-most-once, Exactly-once helps in tuning the performance of the application based on business needs and also helps in designing the application based on the business requirements at hand.
+The ability to have replication factor defined at a cluster or topic level and capability to have multiple data centers using inbuilt replication provides better high availability and fault tolerance compared to MQ
+
+### Messaging semantics
+
+Different messaging semantics such as At-least-once, At-most-once, Exactly-once helps in tuning the performance of the application based on business needs and also helps in designing the application based on the business requirements at hand.
 
 ### Easy integrations
 
-Easy integrations with different technology stacks by virtue of 100+ ‘connectors’ provided by Kafka (Confluent) or from other software vendors such as Pega, Mulesoft, IBM IIDR, Splunk etc. The distributed architecture of kafka makes the integration easier with other niche technologies which reply on distributed architecture.
+Integrations with different technology stacks has been made so easy by virtue of 100+ ‘connectors’ provided by Kafka (Confluent) or from other software vendors such as Pega, Mulesoft, IBM IIDR, Splunk etc. The distributed architecture of kafka makes the integration easier with other niche technologies which rely on distributed architecture.
